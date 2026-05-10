@@ -44,6 +44,5 @@ jobs:
           python_ver: '3.8'
           pyinstaller_ver: '==5.13.2'
           spec: 'main.py'
-          requirements: 'src/requirements.txt'
           upload_exe_with_name: 'my_python01'
           options: --onefile
