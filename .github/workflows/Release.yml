@@ -5,7 +5,7 @@ on:
     tags:
       - 'v*'
 
-permissions: write
+permissions: write-all
 
 jobs:
   build:
