@@ -12,7 +12,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Create Executable
-        ID: create_executable
         uses: sayyid5416/pyinstaller@v1
         with:
           python_ver: '3.8'
