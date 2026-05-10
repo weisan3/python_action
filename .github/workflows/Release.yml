@@ -1,0 +1,26 @@
+name: Create Release
+
+on: 
+  push:
+    tags:
+      - 'v*'
+
+permissions: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Create Executable
+        ID: create_executable
+        uses: sayyid5416/pyinstaller@v1
+        with:
+          python_ver: '3.8'
+          spec: 'main.py'
+          upload_exe_with_name: 'my_python01'
+          options: --onefile
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with: 
+            files: ./dist/**
